@@ -9,4 +9,6 @@ devtools::install_github("https://github.com/swati-rajwal/bmi510final")
 ```r
 library(bmi510final)
 
+help(package="bmi510final")
+
 ```
