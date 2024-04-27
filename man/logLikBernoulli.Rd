@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{logLikBernoulli}
 \alias{logLikBernoulli}
-\title{Maximizes log-likelihood for Bernoulli distribution}
+\title{R function to Maximize log-likelihood for Bernoulli distribution}
 \usage{
 logLikBernoulli(data)
 }
@@ -13,5 +13,5 @@ logLikBernoulli(data)
 The parameter p that maximizes the log-likelihood.
 }
 \description{
-Maximizes log-likelihood for Bernoulli distribution
+R function to Maximize log-likelihood for Bernoulli distribution
 }

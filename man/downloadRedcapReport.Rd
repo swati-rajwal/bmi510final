@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{downloadRedcapReport}
 \alias{downloadRedcapReport}
-\title{Download Report from REDCap}
+\title{R function to download report from REDCap}
 \usage{
 downloadRedcapReport(redcapTokenName, redcapUrl, redcapReportId)
 }

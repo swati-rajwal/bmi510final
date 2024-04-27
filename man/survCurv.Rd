@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{survCurv}
 \alias{survCurv}
-\title{Calculates and plots a survival curve S(t)}
+\title{R function to calculate and plot a survival curve S(t)}
 \usage{
 survCurv(status, time)
 }
@@ -15,5 +15,5 @@ survCurv(status, time)
 Plot of the survival curve.
 }
 \description{
-Calculates and plots a survival curve S(t)
+R function to calculate and plot a survival curve S(t)
 }

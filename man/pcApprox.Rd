@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{pcApprox}
 \alias{pcApprox}
-\title{Principal Component Approximation of Data}
+\title{R function for principal component approx. of Data}
 \usage{
 pcApprox(x, npc)
 }
@@ -15,5 +15,5 @@ pcApprox(x, npc)
 An approximation of the original data using the specified number of PCs.
 }
 \description{
-Principal Component Approximation of Data
+R function for principal component approx. of Data
 }

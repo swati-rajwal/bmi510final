@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{unscale}
 \alias{unscale}
-\title{Reverses the scaling and centering transformation applied to a vector}
+\title{R function to reverse the scaling and centering transformation applied to a vector}
 \usage{
 unscale(x)
 }
@@ -13,5 +13,5 @@ unscale(x)
 The unscaled original vector.
 }
 \description{
-Reverses the scaling and centering transformation applied to a vector
+R function to reverse the scaling and centering transformation applied to a vector
 }

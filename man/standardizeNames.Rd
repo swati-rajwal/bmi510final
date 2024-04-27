@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{standardizeNames}
 \alias{standardizeNames}
-\title{Standardizes variable names in a data frame to small camel case}
+\title{R function to standardize variable names}
 \usage{
 standardizeNames(data)
 }
@@ -13,5 +13,5 @@ standardizeNames(data)
 A tibble with standardized variable names.
 }
 \description{
-Standardizes variable names in a data frame to small camel case
+R function to standardize variable names
 }

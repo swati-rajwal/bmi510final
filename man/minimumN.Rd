@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{minimumN}
 \alias{minimumN}
-\title{Calculate Minimum Sample Size for T-Test}
+\title{R function to calculate min. sample size for T-Test}
 \usage{
 minimumN(x1, x2 = NULL, power = 0.8, sig_level = 0.05)
 }

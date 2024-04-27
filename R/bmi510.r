@@ -1,6 +1,6 @@
-#' Maximizes log-likelihood for Bernoulli distribution
+#' R function to Maximize log-likelihood for Bernoulli distribution
 #'
-#' @param data A numeric vector containing 0s and 1s.
+#' @param data Numeric vector containing 0s and 1s.
 #' @return The parameter p that maximizes the log-likelihood.
 #' @export
 logLikBernoulli <- function(data) {
@@ -10,7 +10,7 @@ logLikBernoulli <- function(data) {
   return(max_p)
 }
 
-#' Calculates and plots a survival curve S(t)
+#' R function to calculate and plot a survival curve S(t)
 #'
 #' @param status Numerical vector indicating the status (1 = event, 0 = censored).
 #' @param time Numerical vector of times at which the status is observed.
@@ -25,7 +25,7 @@ survCurv <- function(status, time) {
     )
 }
 
-#' Reverses the scaling and centering transformation applied to a vector
+#' R function to reverse the scaling and centering transformation applied to a vector
 #'
 #' @param x A scaled numeric vector.
 #' @return The unscaled original vector.
@@ -38,7 +38,7 @@ unscale <- function(x) {
   (x * orig_sd) + orig_mean
 }
 
-#' Principal Component Approximation of Data
+#' R function for principal component approx. of Data
 #'
 #' @param x A numeric matrix or data frame.
 #' @param npc Number of principal components to use.
@@ -53,7 +53,7 @@ pcApprox <- function(x, npc) {
   sweep(approx_data, 2, scale_scale, "*")
 }
 
-#' Standardizes variable names in a data frame to small camel case
+#' R function to standardize variable names
 #'
 #' @param data A tibble or data frame.
 #' @return A tibble with standardized variable names.
@@ -67,7 +67,7 @@ standardizeNames <- function(data) {
                   to_any_case(case = "small_camel"))
 }
 
-#' Calculate Minimum Sample Size for T-Test
+#' R function to calculate min. sample size for T-Test
 #'
 #' This function estimates the minimum sample size required for a t-test with
 #' 80% power and a significance level of 0.05. It can perform calculations
@@ -117,7 +117,7 @@ minimumN <- function(x1, x2 = NULL, power = 0.80, sig_level = 0.05) {
 }
 
 
-#' Download Report from REDCap
+#' R function to download report from REDCap
 #'
 #' Retrieves a specified report from REDCap using the API token, URL, and report ID provided.
 #' The API token is sourced from the user's .Renviron file.
