@@ -2,6 +2,7 @@
 #'
 #' @param data A numeric vector containing 0s and 1s.
 #' @return The parameter p that maximizes the log-likelihood.
+#' @export
 logLikBernoulli <- function(data) {
   p_grid <- seq(0, 1, by = 0.001)
   log_lik <- sapply(p_grid, function(p) sum(dbinom(data, size = 1, prob = p, log = TRUE)))
@@ -14,28 +15,21 @@ logLikBernoulli <- function(data) {
 #' @param status Numerical vector indicating the status (1 = event, 0 = censored).
 #' @param time Numerical vector of times at which the status is observed.
 #' @return Plot of the survival curve.
-# survCurv <- function(status, time) {
-#   library(survival)
-#   surv_obj <- Surv(time, status)
-#   surv_fit <- survfit(surv_obj ~ 1)
-#   plot(surv_fit, main = "Survival Curve", xlab = "Time", ylab = "Survival Probability")
-#   return(invisible(surv_fit))
-# }
-
+#' @export
 survCurv <- function(status, time) {
-  # Create the survival object
-  surv_obj <- Surv(time, status)
-  # Fit the survival model
-  surv_fit <- survfit(surv_obj ~ 1)
-  # Plot the survival curve
-  plot(surv_fit, main = "Survival Curve", xlab = "Time", ylab = "Survival Probability")
-  # The function does not need to return anything for plotting
+  ggsurvfit::survfit2(survival::Surv(time, status) ~ 1) |>
+    ggsurvfit::ggsurvfit() +
+    ggplot2::labs(
+      x = "Time",
+      y = "Overall survival probability"
+    )
 }
 
 #' Reverses the scaling and centering transformation applied to a vector
 #'
 #' @param x A scaled numeric vector.
 #' @return The unscaled original vector.
+#' @export
 unscale <- function(x) {
   orig_mean <- attr(x, "scaled:center")
   orig_sd <- attr(x, "scaled:scale")
@@ -49,6 +43,7 @@ unscale <- function(x) {
 #' @param x A numeric matrix or data frame.
 #' @param npc Number of principal components to use.
 #' @return An approximation of the original data using the specified number of PCs.
+#' @export
 pcApprox <- function(x, npc) {
   pca <- prcomp(x, scale. = TRUE)
   approx_data <- pca$x[, 1:npc] %*% t(pca$rotation[, 1:npc])
@@ -62,6 +57,7 @@ pcApprox <- function(x, npc) {
 #'
 #' @param data A tibble or data frame.
 #' @return A tibble with standardized variable names.
+#' @export
 standardizeNames <- function(data) {
   library(dplyr)
   library(janitor)
