@@ -66,3 +66,110 @@ standardizeNames <- function(data) {
     rename_with(~ make_clean_names(.) %>%
                   to_any_case(case = "small_camel"))
 }
+
+#' Calculate Minimum Sample Size for T-Test
+#'
+#' This function estimates the minimum sample size required for a t-test with
+#' 80% power and a significance level of 0.05. It can perform calculations
+#' for both one-sample and two-sample t-tests based on the input provided.
+#'
+#' @param x1 Numeric vector of preliminary data for the first sample or the only sample.
+#' @param x2 Optional numeric vector of preliminary data for the second sample.
+#' @param power The power for which the sample size is being calculated (default is 0.80).
+#' @param sig_level The significance level to be used in the test (default is 0.05).
+#'
+#' @return An integer representing the minimum sample size needed to achieve the
+#' specified power for a t-test.
+#'
+#' @export
+#'
+#' @examples
+#' # For a one-sample t-test
+#' data1 <- rnorm(10, mean = 5, sd = 1)
+#' minimumN(data1)
+#'
+#' # For a two-sample t-test
+#' data2 <- rnorm(10, mean = 5.5, sd = 1.2)
+#' minimumN(data1, data2)
+minimumN <- function(x1, x2 = NULL, power = 0.80, sig_level = 0.05) {
+  if (!is.null(x2)) {
+    # Two-sample t-test
+    effect_size <- abs(mean(x1) - mean(x2)) / sqrt((var(x1)/length(x1)) + (var(x2)/length(x2)))
+    n <- ceiling(pwr.t.test(
+      n = NULL,
+      d = effect_size,
+      sig.level = sig_level,
+      power = power,
+      type = "two.sample"
+    )$n)
+  } else {
+    # One-sample t-test
+    effect_size <- (mean(x1) - 0) / sqrt(var(x1)/length(x1))
+    n <- ceiling(pwr.t.test(
+      n = NULL,
+      d = effect_size,
+      sig.level = sig_level,
+      power = power,
+      type = "one.sample"
+    )$n)
+  }
+  return(n)
+}
+
+
+#' Download Report from REDCap
+#'
+#' Retrieves a specified report from REDCap using the API token, URL, and report ID provided.
+#' The API token is sourced from the user's .Renviron file.
+#'
+#' @param redcapTokenName The name of the environment variable containing the REDCap API token.
+#' @param redcapUrl The URL of the REDCap API.
+#' @param redcapReportId The report ID number for the report you wish to download.
+#'
+#' @return A tibble containing the contents of the report.
+#'
+#' @export
+#' @examples
+#' # Example usage:
+#' # downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.example.com/api/", "12345")
+#'
+#' # Note: Before using the function, make sure that your .Renviron file contains a line like:
+#' # REDCAP_API_TOKEN="your_api_token_here"
+downloadRedcapReport <- function(redcapTokenName, redcapUrl, redcapReportId) {
+  # Load required libraries
+  if (!requireNamespace("httr", quietly = TRUE)) {
+    stop("Package 'httr' is required but not installed.")
+  }
+  
+  if (!requireNamespace("readr", quietly = TRUE)) {
+    stop("Package 'readr' is required but not installed.")
+  }
+  
+  # Use Sys.getenv() to read the API token from the .Renviron file
+  token <- Sys.getenv(redcapTokenName)
+  print("token read!")
+  
+  # Check if the token is not empty
+  if (token == "") {
+    stop(paste("API token for", redcapTokenName, "not found in .Renviron file."))
+  }
+  
+  # Prepare the body for the POST request
+  formData <- list(
+    token = token,
+    content = 'report',
+    format = 'csv',
+    report_id = as.character(redcapReportId),
+    csvDelimiter = '',
+    rawOrLabel = 'raw',
+    rawOrLabelHeaders = 'raw',
+    exportCheckboxLabel = 'false',
+    returnFormat = 'csv'
+  )
+  
+  # Perform the POST request to download the report
+  response <- httr::POST(redcapUrl, body = formData, encode = "form")
+  result <- httr::content(response)
+  return(tibble::tibble(result))
+
+}

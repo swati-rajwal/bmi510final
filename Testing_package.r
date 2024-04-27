@@ -3,3 +3,5 @@ survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-M
 # Test the survCurv function with the loaded data
 
 survCurv(survival_data$status, survival_data$time)
+
+downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.emory.edu/api/", "46524")
