@@ -10,10 +10,6 @@ minimumN(x1, x2 = NULL)
 \item{x1}{Numeric vector of preliminary data for the first sample or the only sample.}
 
 \item{x2}{Optional numeric vector of preliminary data for the second sample.}
-
-\item{power}{The power for which the sample size is being calculated (default is 0.80).}
-
-\item{sig_level}{The significance level to be used in the test (default is 0.05).}
 }
 \value{
 An integer representing the minimum sample size needed to achieve the
@@ -26,10 +22,10 @@ for both one-sample and two-sample t-tests based on the input provided.
 }
 \examples{
 # For a one-sample t-test
-data1 <- rnorm(10, mean = 5, sd = 1)
+data1 = rnorm(10, mean = 5, sd = 1)
 minimumN(data1)
 
 # For a two-sample t-test
-data2 <- rnorm(10, mean = 5.5, sd = 1.2)
+data2 = rnorm(10, mean = 5.5, sd = 1.2)
 minimumN(data1, data2)
 }

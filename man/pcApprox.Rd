@@ -21,6 +21,6 @@ reconstructs it back to the original scale and center.
 }
 \examples{
 data(iris)
-approx_data <- pcApprox(iris[, 1:4], 2)
+approx_data = pcApprox(iris[, 1:4], 2)
 print(approx_data)
 }

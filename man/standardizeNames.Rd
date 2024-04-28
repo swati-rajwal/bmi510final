@@ -21,7 +21,7 @@ This function standardizes the column names of a data frame to small camel case 
 for converting to the specified case format.
 }
 \examples{
-data <- data.frame(`First name` = 1:4, `Last name` = 4:1)
-clean_data <- standardizeNames(data)
+data = data.frame(`First name` = 1:4, `Last name` = 4:1)
+clean_data = standardizeNames(data)
 print(names(clean_data))
 }
