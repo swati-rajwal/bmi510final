@@ -8,37 +8,41 @@ This tutorial describes how to access functionality in `bmi510final` R Package.
     install_github("https://github.com/swati-rajwal/bmi510final")
     ```
     or
+   
     ```r
     devtools::install_github("https://github.com/swati-rajwal/bmi510final")
     ```
+
+# 📌Functions Provided:
+This package provides a suite of tools designed to facilitate common tasks in biomedical informatics research. It includes functions for analyzing `Bernoulli distributions`, computing `survival curves`, `unscaling standardized data`, `approximating principal components`, `standardizing variable names` in datasets, determining `minimum sample sizes for statistical tests`, and `securely fetching data from RedCap`. 
+The primary goal is to create reliable, reusable code that enhances productivity and ensures consistency across data analyses. All functions are well-documented and accessible for easy integration into research workflows.
 
 # 👩‍💻Working on the Package
 1. Open `Terminal` or `iTerm2`.
 2. Download the repository:
 	* `git clone https://github.com/swati-rajwal/bmi510final`
 	* `cd bmi510final`
-3. Edit
-4. Update documentation
-	* run R, either from terminal or within RStudio
-	* `library(devtools)`
-	* `library(roxygen2)`
-	* `document()`
-	* `install()`
-5. Push up changes
+3. Make changes in the code as you wish
+4. Then run `r` either in cmd or gitbash or RStudio
+   ```r
+   library(devtools)
+   library(roxygen2)
+   document()
+   install()
+   ```
+   or
+   
+   ```r
+   library(bmi510final)
+   help(package="bmi510final")
+   devtools::document()
+   devtools::install()
+   devtools::check()
+   ```
+   Please make sure your system has https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html installed on your local computer while for `check()` function
+  
+7. Push up changes
 	* `git status` 
-	* `git add [changed file]` 
-	* Do not add files that you do not want to contribute, e.g., `random_scraps.R`
-	* `git commit -m "a string describing your changes"` 
-	* `git push` 
-
-# 📝Usage
-
-```r
-library(bmi510final)
-help(package="bmi510final")
-devtools::document()
-devtools::install()
-devtools::check()
-```
-
-Please make sure your system has https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html installed on your local computer while for `check()` function
+	* `git add .`
+ 	* `git commit –m "added minimumN()"`
+ 	* `git push` 
