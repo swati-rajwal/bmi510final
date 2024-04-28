@@ -3,6 +3,8 @@
 #' @param data Numeric vector containing 0s and 1s.
 #' @return The parameter p that maximizes the log-likelihood.
 #' @export
+#' @example 
+#' print(logLikBernoulli(c(1, 0, 0, 0, 1, 1, 1)))
 logLikBernoulli = function(data) {
   p_grid = seq(0, 1, by = 0.001)
   log_likelihoods = numeric(length(p_grid))
@@ -21,6 +23,9 @@ logLikBernoulli = function(data) {
 #' @param time Numerical vector of times at which the status is observed.
 #' @return Plot of the survival curve.
 #' @export
+#' @example 
+#' survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv")
+#' survCurv(survival_data$status, survival_data$time)
 survCurv = function(status, time) {
   data = data.frame(time = time, status = status)
   data = data[order(data$time),]
@@ -38,6 +43,11 @@ survCurv = function(status, time) {
 #' @param x A scaled numeric vector.
 #' @return The unscaled original vector.
 #' @export
+#' @example
+#' scaled_vector = scale(c(10, 20, 30, 40, 50))
+#' print(paste("Original data: ",scaled_vector))
+#' print(paste("Original data after scaling: ",scaled_vector))
+#' print(paste("Unscaling the scaled data:", unscale(scaled_vector))
 unscale= function(x) {
   orig_mean = attr(x, "scaled:center")
   orig_sd = attr(x, "scaled:scale")
@@ -92,9 +102,8 @@ pcApprox = function(x, npc) {
 #' @param data A data frame whose column names need to be standardized.
 #' @return A data frame with standardized column names in small camel case.
 #' @examples
-#' data = data.frame(`First name` = 1:4, `Last name` = 4:1)
-#' clean_data = standardizeNames(data)
-#' print(names(clean_data))
+#' sample_data = data.frame(`FiRst nAMe` = c("Swati", "Taylor"),`Last Name` = c("Rajwal", "Swift"),`Age in yeARS` = c(21, 32))
+#' print(standardizeNames(sample_data))
 #' @export
 # standardizeNames = function(data) {
 #   data = dplyr::rename_with(data, ~ snakecase::to_any_case(janitor::make_clean_names(names(data)), case = "small_camel"))
@@ -121,13 +130,10 @@ standardizeNames = function(data) {
 #' @export
 #'
 #' @examples
-#' # For a one-sample t-test
-#' data1 = rnorm(10, mean = 5, sd = 1)
-#' minimumN(data1)
-#'
-#' # For a two-sample t-test
-#' data2 = rnorm(10, mean = 5.5, sd = 1.2)
-#' minimumN(data1, data2)
+#' sample_size_one = minimumN(rnorm(30, mean = 5, sd = 1.5))
+#' print(paste("Minimum sample size for one-sample t-test:", sample_size_one))
+#' sample_size_two = minimumN(rnorm(30, mean = 5, sd = 1.5), rnorm(30, mean = 5.5, sd = 1.5))
+#' print(paste("Minimum sample size for two-sample t-test:", sample_size_two))
 minimumN = function(x1, x2 = NULL) {
   alpha = 0.05   # Significance level
   power = 0.8    # Desired power
