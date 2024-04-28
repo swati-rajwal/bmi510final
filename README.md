@@ -1,5 +1,4 @@
 # 🎯Quick Start: Using the Package
-====================================
 This tutorial describes how to access functionality in `bmi510final` R Package.
 
 1. Open `R` in your terminal (CMD/Gitbash).
