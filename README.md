@@ -17,7 +17,7 @@ This tutorial describes how to access functionality in `bmi510final` R Package.
 2. Alternatively, once you install the package on your system, you can run `help(package = bmi510final)` and follow this short GIF to run sample examples for any function provided by this package:
 
 
-https://github.com/swati-rajwal/bmi510final/assets/145946818/9b132ed0-b90f-487c-af51-8c1f04c63a9d
+https://github.com/swati-rajwal/bmi510final/assets/145946818/9767933d-bc79-401b-919d-560f00039a0e
 
 
 # 📌Functions Provided:
