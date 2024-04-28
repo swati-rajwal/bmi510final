@@ -44,10 +44,16 @@ survCurv = function(status, time) {
 #' @return The unscaled original vector.
 #' @export
 #' @examples
-#' scaled_vector = scale(c(10, 20, 30, 40, 50))
-#' print(paste("Original data: ",scaled_vector))
-#' print(paste("Original data after scaling: ",scaled_vector))
-#' print(paste("Unscaling the scaled data:", unscale(scaled_vector))
+#' original_data = c(10, 20, 30, 40, 50)
+#' 
+#' print(paste("original data is: ", toString(original_data)))
+#' 
+#' scaled_vector = scale(original_data)
+#' print("Scaled Data is: ")
+#' print(scaled_vector)
+#' 
+#' print("Unscaling the scaled data:")
+#' print(unscale(scaled_vector))
 unscale= function(x) {
   orig_mean = attr(x, "scaled:center")
   orig_sd = attr(x, "scaled:scale")
@@ -137,7 +143,6 @@ standardizeNames = function(data) {
 minimumN = function(x1, x2 = NULL) {
   alpha = 0.05   # Significance level
   power = 0.8    # Desired power
-  
   if (is.null(x2)) {
     m = mean(x1)
     sd = sd(x1)

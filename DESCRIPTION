@@ -1,9 +1,9 @@
 Package: bmi510final
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Swati", "Rajwal", , "swati.rajwal@emory.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0002-3826-5069"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8

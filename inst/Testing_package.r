@@ -8,8 +8,14 @@ survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-M
 survCurv(survival_data$status, survival_data$time)
 
 # Question 3
-scaled_vector = scale(c(10, 20, 30, 40, 50))
+original_data = c(10, 20, 30, 40, 50)
+print(paste("original data is: ", toString(original_data)))
+
+scaled_vector = scale(original_data)
+print("Scaled Data is: ")
 print(scaled_vector)
+
+print("Unscaling the scaled data:")
 print(unscale(scaled_vector))
 
 # Question 4
