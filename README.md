@@ -1,5 +1,5 @@
 # 🎯Quick Start: Using the Package
-This tutorial describes how to access functionality in `bmi510final` R Package.
+This tutorial describes how to access functionality in `bmi510final` R Package. Please note that this work is a submission for the BMI-510 Coursework at Emory University taught by Prof. J Lucas McKay.
 
 1. Open `R` in your terminal (CMD/Gitbash).
 2. Download and install the package repository:
