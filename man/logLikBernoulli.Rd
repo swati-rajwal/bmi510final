@@ -2,16 +2,16 @@
 % Please edit documentation in R/bmi510.r
 \name{logLikBernoulli}
 \alias{logLikBernoulli}
-\title{R function to Maximize log-likelihood for Bernoulli distribution}
+\title{Question 1: R function to Maximize log-likelihood for Bernoulli distribution}
 \usage{
 logLikBernoulli(data)
 }
 \arguments{
-\item{data}{A numeric vector containing 0s and 1s.}
+\item{data}{Numeric vector containing 0s and 1s.}
 }
 \value{
 The parameter p that maximizes the log-likelihood.
 }
 \description{
-R function to Maximize log-likelihood for Bernoulli distribution
+Question 1: R function to Maximize log-likelihood for Bernoulli distribution
 }

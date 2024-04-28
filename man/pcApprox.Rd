@@ -2,18 +2,25 @@
 % Please edit documentation in R/bmi510.r
 \name{pcApprox}
 \alias{pcApprox}
-\title{R function for principal component approx. of Data}
+\title{Approximate Data Using Principal Component Analysis}
 \usage{
 pcApprox(x, npc)
 }
 \arguments{
-\item{x}{A numeric matrix or data frame.}
+\item{x}{A numeric matrix or data frame of data to approximate.}
 
-\item{npc}{Number of principal components to use.}
+\item{npc}{Number of principal components to use for approximation.}
 }
 \value{
-An approximation of the original data using the specified number of PCs.
+A matrix of the approximated data, rescaled and recentered.
 }
 \description{
-R function for principal component approx. of Data
+This function approximates the original data matrix \code{x} using the first \code{npc}
+principal components. It scales and centers the data before PCA and
+reconstructs it back to the original scale and center.
+}
+\examples{
+data(iris)
+approx_data <- pcApprox(iris[, 1:4], 2)
+print(approx_data)
 }

@@ -2,16 +2,26 @@
 % Please edit documentation in R/bmi510.r
 \name{standardizeNames}
 \alias{standardizeNames}
-\title{R function to standardize variable names}
+\title{Question 5: R function to standardize variable names}
 \usage{
 standardizeNames(data)
 }
 \arguments{
-\item{data}{A tibble or data frame.}
+\item{data}{A data frame whose column names need to be standardized.}
 }
 \value{
-A tibble with standardized variable names.
+A data frame with standardized column names in small camel case.
 }
 \description{
-R function to standardize variable names
+Standardize Column Names
+}
+\details{
+This function standardizes the column names of a data frame to small camel case using
+\code{janitor::make_clean_names} for initial cleaning and \code{snakecase::to_any_case}
+for converting to the specified case format.
+}
+\examples{
+data <- data.frame(`First name` = 1:4, `Last name` = 4:1)
+clean_data <- standardizeNames(data)
+print(names(clean_data))
 }

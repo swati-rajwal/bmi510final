@@ -2,9 +2,9 @@
 % Please edit documentation in R/bmi510.r
 \name{minimumN}
 \alias{minimumN}
-\title{R function to calculate min. sample size for T-Test}
+\title{Question 6: R function to calculate min. sample size for T-Test}
 \usage{
-minimumN(x1, x2 = NULL, power = 0.8, sig_level = 0.05)
+minimumN(x1, x2 = NULL)
 }
 \arguments{
 \item{x1}{Numeric vector of preliminary data for the first sample or the only sample.}
