@@ -13,8 +13,9 @@ This tutorial describes how to access functionality in `bmi510final` R Package.
     devtools::install_github("https://github.com/swati-rajwal/bmi510final")
     ```
 # 🏃Running Examples
-Go to `inst/` folder and it contains `Testing_package.r` file with examples. Alternatively, once you install the package on your system, you can run `help(package = bmi510final)` and this will open up a webpage as shown below:
-
+1. Go to `inst/` folder and it contains `Testing_package.r` file with examples.
+2. Alternatively, once you install the package on your system, you can run `help(package = bmi510final)` and follow this short GIF to run sample examples for any function provided by this package:
+https://github.com/swati-rajwal/bmi510final/assets/145946818/1a69ae10-30d8-409a-ab90-2c4d4ed5be83
 
 # 📌Functions Provided:
 This package provides a suite of tools designed to facilitate common tasks in biomedical informatics research. It includes functions for analyzing `Bernoulli distributions`, computing `survival curves`, `unscaling standardized data`, `approximating principal components`, `standardizing variable names` in datasets, determining `minimum sample sizes for statistical tests`, and `securely fetching data from RedCap`. 
