@@ -1,5 +1,5 @@
 Package: bmi510final
-Title: What the Package Does (One Line, Title Case)
+Title: Final Submission for BMI510 Courswork at Emory University by Swati Rajwal
 Version: 0.0.1
 Authors@R: 
     person("Swati", "Rajwal", , "swati.rajwal@emory.edu", role = c("aut", "cre"),
