@@ -65,7 +65,7 @@ unscale= function(x) {
   return(result)
 }
 
-#' Approximate Data Using Principal Component Analysis
+#' Question 4: Approximate Data Using PCA
 #'
 #' This function approximates the original data matrix `x` using the first `npc`
 #' principal components. It scales and centers the data before PCA and
@@ -176,7 +176,7 @@ minimumN = function(x1, x2 = NULL) {
 #'
 #' @export
 #' @examples
-#' # Example usage:
+#'
 #' # downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.example.com/api/", "12345")
 #'
 #' # Note: Before using the function, make sure that your .Renviron file contains a line like:
