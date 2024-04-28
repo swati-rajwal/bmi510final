@@ -15,3 +15,6 @@ The parameter p that maximizes the log-likelihood.
 \description{
 Question 1: R function to Maximize log-likelihood for Bernoulli distribution
 }
+\examples{
+print(logLikBernoulli(c(1, 0, 0, 0, 1, 1, 1)))
+}

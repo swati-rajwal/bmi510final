@@ -15,3 +15,9 @@ The unscaled original vector.
 \description{
 Question 3: R function to reverse the scaling and centering transformation applied to a vector
 }
+\examples{
+scaled_vector = scale(c(10, 20, 30, 40, 50))
+print(paste("Original data: ",scaled_vector))
+print(paste("Original data after scaling: ",scaled_vector))
+print(paste("Unscaling the scaled data:", unscale(scaled_vector))
+}

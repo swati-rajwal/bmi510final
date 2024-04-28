@@ -3,7 +3,7 @@
 #' @param data Numeric vector containing 0s and 1s.
 #' @return The parameter p that maximizes the log-likelihood.
 #' @export
-#' @example 
+#' @examples
 #' print(logLikBernoulli(c(1, 0, 0, 0, 1, 1, 1)))
 logLikBernoulli = function(data) {
   p_grid = seq(0, 1, by = 0.001)
@@ -23,7 +23,7 @@ logLikBernoulli = function(data) {
 #' @param time Numerical vector of times at which the status is observed.
 #' @return Plot of the survival curve.
 #' @export
-#' @example 
+#' @examples
 #' survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv")
 #' survCurv(survival_data$status, survival_data$time)
 survCurv = function(status, time) {
@@ -43,7 +43,7 @@ survCurv = function(status, time) {
 #' @param x A scaled numeric vector.
 #' @return The unscaled original vector.
 #' @export
-#' @example
+#' @examples
 #' scaled_vector = scale(c(10, 20, 30, 40, 50))
 #' print(paste("Original data: ",scaled_vector))
 #' print(paste("Original data after scaling: ",scaled_vector))

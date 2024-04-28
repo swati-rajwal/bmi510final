@@ -17,3 +17,7 @@ Plot of the survival curve.
 \description{
 Question 2: R function to calculate and plot a survival curve S(t)
 }
+\examples{
+survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv")
+survCurv(survival_data$status, survival_data$time)
+}

@@ -21,11 +21,8 @@ This function estimates the minimum sample size required for a t-test with
 for both one-sample and two-sample t-tests based on the input provided.
 }
 \examples{
-# For a one-sample t-test
-data1 = rnorm(10, mean = 5, sd = 1)
-minimumN(data1)
-
-# For a two-sample t-test
-data2 = rnorm(10, mean = 5.5, sd = 1.2)
-minimumN(data1, data2)
+sample_size_one = minimumN(rnorm(30, mean = 5, sd = 1.5))
+print(paste("Minimum sample size for one-sample t-test:", sample_size_one))
+sample_size_two = minimumN(rnorm(30, mean = 5, sd = 1.5), rnorm(30, mean = 5.5, sd = 1.5))
+print(paste("Minimum sample size for two-sample t-test:", sample_size_two))
 }

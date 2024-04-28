@@ -21,7 +21,6 @@ This function standardizes the column names of a data frame to small camel case 
 for converting to the specified case format.
 }
 \examples{
-data = data.frame(`First name` = 1:4, `Last name` = 4:1)
-clean_data = standardizeNames(data)
-print(names(clean_data))
+sample_data = data.frame(`FiRst nAMe` = c("Swati", "Taylor"),`Last Name` = c("Rajwal", "Swift"),`Age in yeARS` = c(21, 32))
+print(standardizeNames(sample_data))
 }
