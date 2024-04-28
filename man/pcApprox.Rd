@@ -2,7 +2,7 @@
 % Please edit documentation in R/bmi510.r
 \name{pcApprox}
 \alias{pcApprox}
-\title{Approximate Data Using Principal Component Analysis}
+\title{Question 4: Approximate Data Using PCA}
 \usage{
 pcApprox(x, npc)
 }

@@ -21,7 +21,7 @@ Retrieves a specified report from REDCap using the API token, URL, and report ID
 The API token is sourced from the user's .Renviron file.
 }
 \examples{
-# Example usage:
+
 # downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.example.com/api/", "12345")
 
 # Note: Before using the function, make sure that your .Renviron file contains a line like:
