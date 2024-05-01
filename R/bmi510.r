@@ -24,14 +24,17 @@ logLikBernoulli = function(data) {
 #' @return Plot of the survival curve.
 #' @export
 #' @examples
-#' survival_data = read.csv("https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv")
+#' # Load the survival dataset
+#' survival_url = "https://jlucasmckay.bmi.emory.edu/global/bmi510/Labs-Materials/survival.csv"
+#' survival_data = read.csv(survival_url)
+#' # Calculate and plot the survival curve
 #' survCurv(survival_data$status, survival_data$time)
 survCurv = function(status, time) {
   data = data.frame(time = time, status = status)
   data = data[order(data$time),]
   summary_data = aggregate(status ~ time, data = data, FUN = function(x) sum(x == 1))
   names(summary_data) = c("time", "n_events")
-  summary_data$n_risk = rev(cumsum(rev(summary_data$n_events)))  # cumulative number of events in reverse order
+  summary_data$n_risk = rev(cumsum(rev(summary_data$n_events)))
   summary_data$n_risk = max(summary_data$n_risk) + 1 - cumsum(c(0, head(summary_data$n_events, -1)))  # adjust to start with total and decrement
   summary_data$survival_prob = 1 - summary_data$n_events / summary_data$n_risk
   summary_data$cum_survival = cumprod(summary_data$survival_prob)
@@ -111,10 +114,6 @@ pcApprox = function(x, npc) {
 #' sample_data = data.frame(`FiRst nAMe` = c("Swati", "Taylor"),`Last Name` = c("Rajwal", "Swift"),`Age in yeARS` = c(21, 32))
 #' print(standardizeNames(sample_data))
 #' @export
-# standardizeNames = function(data) {
-#   data = dplyr::rename_with(data, ~ snakecase::to_any_case(janitor::make_clean_names(names(data)), case = "small_camel"))
-#   return(data)
-# }
 standardizeNames = function(data) {
   data = dplyr::rename_with(data, ~ snakecase::to_any_case(janitor::make_clean_names(tolower(names(data))), case = "small_camel"))
   return(data)
@@ -159,7 +158,6 @@ minimumN = function(x1, x2 = NULL) {
     d = (m1 - m2) / pooled_sd
     result = pwr::pwr.t.test(d = d, sig.level = alpha, power = power, type = "two.sample")
   }
-  
   return(ceiling(result$n))
 }
 
@@ -179,8 +177,13 @@ minimumN = function(x1, x2 = NULL) {
 #'
 #' # downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.example.com/api/", "12345")
 #'
-#' # Note: Before using the function, make sure that your .Renviron file contains a line like:
-#' # REDCAP_API_TOKEN="your_api_token_here"
+#' # Note: Before using the function, please make sure to follow following steps:
+#' #1. Close R sessions
+#' #2. Create a .Renviron file in your home directory (i.e., inside 'bmi510final' folder)
+#' #3. Inside the .Renviron file, define the following environment variable:
+#' #REDCAP_API_TOKEN=<your_api_token_here>
+#' #4. Start your R session and now the R session should be able to load the new environment variables.
+#' #5. Run the following code  
 downloadRedcapReport = function(redcapTokenName, redcapUrl, redcapReportId) {
   if (!requireNamespace("httr", quietly = TRUE)) {
     stop("Package 'httr' is required but not installed.")

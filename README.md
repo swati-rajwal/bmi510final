@@ -19,6 +19,14 @@ This tutorial describes how to access functionality in `bmi510final` R Package. 
 
 https://github.com/swati-rajwal/bmi510final/assets/145946818/9767933d-bc79-401b-919d-560f00039a0e
 
+# 🔐Environment Variable and Key
+Once of the functions require you to have `REDCAP_API_TOKEN`. Please follow these steps:
+1. Close R sessions if already open.
+2. Create a .Renviron file in your home directory (i.e., inside 'bmi510final' folder)
+3. Inside the .Renviron file, define the following environment variable:
+    `REDCAP_API_TOKEN`=<your_api_token_here>
+4. Start your R session and now the R session should be able to load the new environment variables.
+5. Run the code.
 
 # 📌Functions Provided:
 This package provides a suite of tools designed to facilitate common tasks in biomedical informatics research. It includes functions for analyzing `Bernoulli distributions`, computing `survival curves`, `unscaling standardized data`, `approximating principal components`, `standardizing variable names` in datasets, determining `minimum sample sizes for statistical tests`, and `securely fetching data from RedCap`. 

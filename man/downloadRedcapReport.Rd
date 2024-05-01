@@ -24,6 +24,11 @@ The API token is sourced from the user's .Renviron file.
 
 # downloadRedcapReport("REDCAP_API_TOKEN", "https://redcap.example.com/api/", "12345")
 
-# Note: Before using the function, make sure that your .Renviron file contains a line like:
-# REDCAP_API_TOKEN="your_api_token_here"
+# Note: Before using the function, please make sure to follow following steps:
+#1. Close R sessions
+#2. Create a .Renviron file in your home directory (i.e., inside 'bmi510final' folder)
+#3. Inside the .Renviron file, define the following environment variable:
+#REDCAP_API_TOKEN=<your_api_token_here>
+#4. Start your R session and now the R session should be able to load the new environment variables.
+#5. Run the following code  
 }
