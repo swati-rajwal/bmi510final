@@ -55,7 +55,9 @@ The primary goal is to create reliable, reusable code that enhances productivity
    devtools::check()
    ```
    Please make sure your system has https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html installed on your local computer while for `check()` function
-  
+5. The output of `devtools::check()` should be:
+   ![image](https://github.com/swati-rajwal/bmi510final/assets/145946818/3f83870b-59e6-4db0-b83d-452e2c2e590e)
+
 7. Push up changes
 	* `git status` 
 	* `git add .`
