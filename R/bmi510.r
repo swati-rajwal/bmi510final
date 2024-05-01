@@ -1,9 +1,9 @@
 #' Question 1: R function to Maximize log-likelihood for Bernoulli distribution
 #'
-#' This function computes the log-likelihood of the Bernoulli distribution parameter \( p \)
-#' for a given binary data vector. It performs a grid-based search over possible values of \( p \)
+#' This function computes the log-likelihood of the Bernoulli distribution parameter p
+#' for a given binary data vector. It performs a grid-based search over possible values of 
 #' from 0 to 1 in steps of 0.001 to find the value that maximizes the log-likelihood of the data.
-#' This approach provides an estimate for the parameter \( p \) that is most likely to have generated
+#' This approach provides an estimate for the parameter that is most likely to have generated
 #' the observed data under a Bernoulli distribution assumption.
 #' 
 #' @param data Numeric vector containing 0s and 1s.
