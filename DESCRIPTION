@@ -3,7 +3,7 @@ Title: R Package for Statistical Analysis (BMI510 Courswork, Emory University) b
 Version: 0.0.1
 Author: Swati Rajwal
 Maintainer: Swati Rajwal <srajwal@emory.edu>
-Description: This package provides a suite of tools designed to facilitate common tasks in biomedical informatics research. It includes functions for analyzing Bernoulli distributions, computing survival curves, unscaling standardized data, approximating principal components, standardizing variable names in datasets, determining minimum sample sizes for statistical tests, and securely fetching data from RedCap. The primary goal is to equip researchers with reliable, reusable code that enhances productivity and ensures consistency across biomedical data analyses. All functions are well-documented and accessible for easy integration into research workflows.
+Description: This package provides a suite of tools designed to facilitate common tasks in biomedical informatics research. It includes functions for analyzing Bernoulli distributions, computing survival curves, unscaling standardized data, approximating principal components, standardizing variable names in datasets, determining minimum sample sizes for statistical tests, and securely fetching data from RedCap. The primary goal is to create reliable, reusable code that enhances productivity and ensures consistency across data analyses. All functions are well-documented and accessible for easy integration into research workflows.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

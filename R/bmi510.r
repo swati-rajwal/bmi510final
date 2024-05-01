@@ -111,7 +111,13 @@ pcApprox = function(x, npc) {
 #' @param data A data frame whose column names need to be standardized.
 #' @return A data frame with standardized column names in small camel case.
 #' @examples
-#' sample_data = data.frame(`FiRst nAMe` = c("Swati", "Taylor"),`Last Name` = c("Rajwal", "Swift"),`Age in yeARS` = c(21, 32))
+#' # Sample data
+#' sample_data = data.frame(
+#'   `FiRst nAMe` = c("Swati", "Taylor"),
+#'   `Last Name` = c("Rajwal", "Swift"),
+#'   `Age in yeARS` = c(21, 32)
+#' )
+#' # Standardize names and print the result
 #' print(standardizeNames(sample_data))
 #' @export
 standardizeNames = function(data) {
