@@ -1,5 +1,5 @@
 # 🎯Quick Start: Using the Package
-This tutorial describes how to access functionality in `bmi510final` R Package. Please note that this work is a submission for the BMI-510 Coursework at Emory University taught by Prof. J Lucas McKay.
+This tutorial describes how to access functionality in the `bmi510final` R Package. Please note that this work is a submission for the BMI-510 Coursework at Emory University taught by Prof. J Lucas McKay.
 
 1. Open `R` in your terminal (CMD/Gitbash).
 2. Download and install the package repository:
@@ -13,16 +13,16 @@ This tutorial describes how to access functionality in `bmi510final` R Package. 
     devtools::install_github("https://github.com/swati-rajwal/bmi510final")
     ```
 # 🏃Running Examples
-1. Go to `inst/` folder and it contains `Testing_package.r` file with examples.
+1. Go to the `inst/` folder and it contains the `Testing_package.r` file with examples.
 2. Alternatively, once you install the package on your system, you can run `help(package = bmi510final)` and follow this short GIF to run sample examples for any function provided by this package:
 
 
 https://github.com/swati-rajwal/bmi510final/assets/145946818/9767933d-bc79-401b-919d-560f00039a0e
 
 # 🔐Environment Variable and Key
-Once of the functions require you to have `REDCAP_API_TOKEN`. Please follow these steps:
+One of the functions requires you to have `REDCAP_API_TOKEN`. Please follow these steps:
 1. Close R sessions if already open.
-2. Create a .Renviron file in your home directory (i.e., inside 'bmi510final' folder)
+2. Create a .Renviron file in your home directory (i.e., inside the 'bmi510final' folder)
 3. Inside the .Renviron file, define the following environment variable:
     `REDCAP_API_TOKEN`=<your_api_token_here>
 4. Start your R session and now the R session should be able to load the new environment variables.
@@ -38,7 +38,7 @@ The primary goal is to create reliable, reusable code that enhances productivity
 	* `git clone https://github.com/swati-rajwal/bmi510final`
 	* `cd bmi510final`
 3. Make changes in the code as you wish
-4. Then run `r` either in cmd or gitbash or RStudio
+4. Then run `r` either in cmd or git bash or RStudio
    ```r
    library(devtools)
    library(roxygen2)
