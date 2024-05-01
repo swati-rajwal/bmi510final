@@ -1,5 +1,11 @@
 #' Question 1: R function to Maximize log-likelihood for Bernoulli distribution
 #'
+#' This function computes the log-likelihood of the Bernoulli distribution parameter \( p \)
+#' for a given binary data vector. It performs a grid-based search over possible values of \( p \)
+#' from 0 to 1 in steps of 0.001 to find the value that maximizes the log-likelihood of the data.
+#' This approach provides an estimate for the parameter \( p \) that is most likely to have generated
+#' the observed data under a Bernoulli distribution assumption.
+#' 
 #' @param data Numeric vector containing 0s and 1s.
 #' @return The parameter p that maximizes the log-likelihood.
 #' @export
@@ -19,6 +25,12 @@ logLikBernoulli = function(data) {
 
 #' Question 2: R function to calculate and plot a survival curve S(t)
 #'
+#' This function calculates and plots a survival curve using time-to-event data.
+#' It takes vectors of event statuses and times, computes the number of events
+#' and the number at risk at each time point, and then uses these to calculate
+#' the survival probability over time. The survival probability is plotted against
+#' time to visualize the survival curve.
+#' 
 #' @param status Numerical vector indicating the status (1 = event, 0 = censored).
 #' @param time Numerical vector of times at which the status is observed.
 #' @return Plot of the survival curve.
@@ -43,6 +55,10 @@ survCurv = function(status, time) {
 
 #' Question 3: R function to reverse the scaling and centering transformation applied to a vector
 #'
+#' This function reverses the centering and scaling transformation applied to a numeric vector.
+#' It retrieves the original mean and standard deviation attributes from the scaled vector and
+#' uses them to rescale and recenter the data back to its original form.
+#' 
 #' @param x A scaled numeric vector.
 #' @return The unscaled original vector.
 #' @export
@@ -169,8 +185,8 @@ minimumN = function(x1, x2 = NULL) {
 
 #' Question 7: R function to download report from REDCap
 #'
-#' Retrieves a specified report from REDCap using the API token, URL, and report ID provided.
-#' The API token is sourced from the user's .Renviron file.
+#' This function retrieves a specified report from REDCap using the API token, URL, and report ID provided.
+#' The API token is sourced from the user's .Renviron file. Follow steps to create your own .Renviron file
 #'
 #' @param redcapTokenName The name of the environment variable containing the REDCap API token.
 #' @param redcapUrl The URL of the REDCap API.

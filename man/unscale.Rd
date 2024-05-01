@@ -13,7 +13,9 @@ unscale(x)
 The unscaled original vector.
 }
 \description{
-Question 3: R function to reverse the scaling and centering transformation applied to a vector
+This function reverses the centering and scaling transformation applied to a numeric vector.
+It retrieves the original mean and standard deviation attributes from the scaled vector and
+uses them to rescale and recenter the data back to its original form.
 }
 \examples{
 original_data = c(10, 20, 30, 40, 50)

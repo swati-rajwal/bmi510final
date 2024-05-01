@@ -15,7 +15,11 @@ survCurv(status, time)
 Plot of the survival curve.
 }
 \description{
-Question 2: R function to calculate and plot a survival curve S(t)
+This function calculates and plots a survival curve using time-to-event data.
+It takes vectors of event statuses and times, computes the number of events
+and the number at risk at each time point, and then uses these to calculate
+the survival probability over time. The survival probability is plotted against
+time to visualize the survival curve.
 }
 \examples{
 # Load the survival dataset

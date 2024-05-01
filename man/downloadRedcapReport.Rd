@@ -17,8 +17,8 @@ downloadRedcapReport(redcapTokenName, redcapUrl, redcapReportId)
 A tibble containing the contents of the report.
 }
 \description{
-Retrieves a specified report from REDCap using the API token, URL, and report ID provided.
-The API token is sourced from the user's .Renviron file.
+This function retrieves a specified report from REDCap using the API token, URL, and report ID provided.
+The API token is sourced from the user's .Renviron file. Follow steps to create your own .Renviron file
 }
 \examples{
 
